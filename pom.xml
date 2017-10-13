@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.7.RELEASE</version>
+    </parent>
+
+    <groupId>com.example.camunda</groupId>
+    <artifactId>camunda-test</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <workflow.version>1.0-SNAPSHOT</workflow.version>
+        <camunda.engine.version>7.7.0</camunda.engine.version>
+        <postgresql.version>9.4.1212</postgresql.version>
+    </properties>
+
+    <modules>
+        <module>camunda-test-app</module>
+        <module>camunda-test-service</module>
+        <module>camunda-test-workflow</module>
+    </modules>
+
+    <dependencyManagement>
+
+        <dependencies>
+
+            <!-- Modules -->
+            <dependency>
+                <groupId>com.example.camunda</groupId>
+                <artifactId>test-app</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example.camunda</groupId>
+                <artifactId>test-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.example.camunda</groupId>
+                <artifactId>test-workflow</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Workflow -->
+            <dependency>
+                <groupId>com.example.camunda.lib</groupId>
+                <artifactId>lib-workflow</artifactId>
+                <version>${workflow.version}</version>
+            </dependency>
+
+            <!-- Databases -->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+
+            <!-- Camunda -->
+            <dependency>
+                <groupId>org.camunda.bpm</groupId>
+                <artifactId>camunda-engine</artifactId>
+                <version>${camunda.engine.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
