@@ -3,6 +3,7 @@ package com.example.camunda.test.app.controller;
 import com.example.camunda.test.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,7 +17,7 @@ public class TestController {
     }
 
     @RequestMapping("/test")
-    public void test(){
-        testService.start();
+    public void test(@RequestParam("content") String content){
+        testService.start(content);
     }
 }

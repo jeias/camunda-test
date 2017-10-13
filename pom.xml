@@ -17,7 +17,6 @@
 
     <properties>
         <workflow.version>1.0-SNAPSHOT</workflow.version>
-        <camunda.engine.version>7.7.0</camunda.engine.version>
         <postgresql.version>9.4.1212</postgresql.version>
     </properties>
 
@@ -60,13 +59,6 @@
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
                 <version>${postgresql.version}</version>
-            </dependency>
-
-            <!-- Camunda -->
-            <dependency>
-                <groupId>org.camunda.bpm</groupId>
-                <artifactId>camunda-engine</artifactId>
-                <version>${camunda.engine.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
